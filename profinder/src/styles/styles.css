@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Mukta', sans-serif;
   display: flex;
   margin: 0;
   padding: 0;
@@ -10,18 +12,35 @@ body {
   background-color: white;
 }
 
+
+input::placeholder {
+  font-family: 'Mukta', sans-serif;                    
+  font-size: 16px;                           
+}
+
 .search-container {
   position: relative;
   margin-top: 20px;
+  border: 0.5px solid grey;
+  border-bottom: none;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 25vw; /* Adjust width as needed */
   overflow: hidden;
-  background-color: #fff;
+  display: flex;
+  background-color: white;
+}
+
+.search-icon {
+  padding: 12px 9px;  /* Adjust spacing as needed */
+  min-width: 0px; /* Ensures the icon area is consistent */
+  color: #ccc; /* Icon color */
+  text-align: center;
 }
 
 .search-input {
+  flex-grow: 1;  
   width: 100%;
-  padding: 10px 20px;
+  
   border: none;
   border-radius: 25px;
   outline: none;
@@ -43,11 +62,31 @@ body {
 .results-container {
   position: relative;
   width: 25vw; /* Adjust to match the search bar or set to 100% for full width */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
+  border: 0.5px solid grey;
+  border-bottom: none;
   background-color: rgba(255, 255, 255, 0.5);
-  max-height: 300px; /* Adjust or remove for full height */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-height: 400px; /* Adjust or remove for full height */
   overflow-y: auto; /* Scrollable content */
+}
+
+.results-container::-webkit-scrollbar {
+  width: 5px; /* Width of the vertical scrollbar */
+  height: 5px; /* Height of the horizontal scrollbar */
+}
+
+.results-container::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color of the track (part the thumb slides within) */
+}
+
+.results-container::-webkit-scrollbar-thumb {
+  background-color: #888; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners on the scrollbar thumb */
+  border: 1px solid #ffffff; /* Creates a border around the scrollbar thumb (optional) */
+}
+
+.results-container::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Color of the scrollbar thumb on hover */
 }
 
 .user-card {
@@ -66,8 +105,10 @@ body {
 
 .no-results-modal {
   width: 100WV; 
-  min-height: 140px; 
-  padding: 10px; 
+  min-height: 150px; 
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.5);
   display: flex; /* Flexbox for centering content */
   align-items: center; /* Vertical alignment */
